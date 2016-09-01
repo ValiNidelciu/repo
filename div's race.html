@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width" />
+     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+   
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+      
+    <div id="1" class="n1">
+      <p class="text-xs-center c">Stelian</p>
+    </div>
+    <div id="2" class="n2">
+      <p class="text-xs-center c">Vali</p>
+    </div>
+    <div id="3" class="n3">
+      <p class="text-xs-center c">Dodo</p>
+    </div>
+    <div class="finish">
+      <p class="text-xs-center">finish</p>
+    </div>
+    
+ <button type="button" id="start" class="btn btn-large btn-block btn-default">START</button>
+ 
+ <button type="button" id="again" class="btn btn-large btn-block btn-danger">TRY AGAIN</button>
+   
+  </body>
+
+
+
+  <script>
+      $(document).ready(function(){
+  
+         $("button#again").hide();
+  $("button#start").click(function(){
+    $(".n1").animate({left: "350px"}, Math.random()*10000,"linear", function(){
+      alert("stelian");
+      
+    }
+      );
+    $(".n2").animate({left: "350px"}, Math.random()*10000,"linear", function(){
+      alert("vali");
+      
+    });
+    $(".n3").animate({left: "350px"}, Math.random()*10000,"linear", function(){
+      alert("dodo")
+    });
+    $(this).hide();
+    $("button#again").show();
+  });
+
+  $("button#again").click(function(){
+      $(".n1, .n2, .n3").animate({left: "0px"}, 1000, "swing", function(){
+          
+          $("button#start").show();
+      })
+          
+     
+});
+      });
+
+  </script>
+
+
+
+  <style>
+      div{
+border:1px;
+border-style:solid;
+height:100px;
+width:100px;
+margin:40px;
+position:relative;
+left:0px;
+}
+.n1{
+  background-color:red;
+}
+.n2{
+  background-color:green;
+}
+.n3{
+  background-color:yellow;
+}
+.finish{
+  height:300px;
+  position:absolute;
+  left: 350px;
+  top: 40px;
+}
+.c{
+  margin:35px 0px 0px 0px;
+  color:white;
+  font-family:Monospace;
+}
+ 
+  </style>
+
+</html>
